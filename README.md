@@ -1,9 +1,9 @@
 ###### GUI Roku Remote
 <img src="https://github.com/rootVIII/rokuremote/blob/master/example_screenshot.png" alt="example1">
 <br><br>
-<b>First follow these quick/simple steps to enable your Roku Server:</b>
+<b>First find your Roku's IP address:</b>
 <br>
-https://blog.roku.com/developer/developer-setup-guide
+https://www.lifewire.com/how-to-find-roku-ip-address-4174687
 <br>
 * Remember its IP address as you'll need to
 enter it as shown in the image above.
