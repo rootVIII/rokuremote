@@ -13,8 +13,7 @@ Press the Save button after entering your IP
 You shouldn't really need to use the power button as most Rokus
 will turn on when the input receives power from the TV.
 However it may be useful for turning the Roku OFF.
-<br><br>
-<code>go get github.com/rootVIII/rokuremote</code>
+<br>
 <br>
 If unable to get or build on Windows, these steps may be needed:
 <pre>
