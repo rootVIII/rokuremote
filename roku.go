@@ -115,15 +115,15 @@ func (r *remote) buildUI() {
 		r.postCommand("home")
 		r.setStatus("home")
 	})
-	playBtn := widget.NewButton("PLAY", func() {
+	playBtn := widget.NewButtonWithIcon("", theme.MediaPlayIcon(), func() {
 		r.postCommand("play")
 		r.setStatus("play")
 	})
-	backBtn := widget.NewButton("BACK", func() {
+	backBtn := widget.NewButtonWithIcon("", theme.NavigateBackIcon(), func() {
 		r.postCommand("back")
 		r.setStatus("back")
 	})
-	powerBtn := widget.NewButton("ON/OFF", func() {
+	powerBtn := widget.NewButton("I|O", func() {
 		r.postCommand("power")
 		r.setStatus("power")
 	})
