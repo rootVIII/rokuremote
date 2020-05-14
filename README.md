@@ -1,9 +1,8 @@
 ###### GUI Roku Remote
 <img src="https://github.com/rootVIII/rokuremote/blob/master/example_screenshot.png" alt="example1">
 <br><br>
-<b>First find your Roku's IP address:</b>
+<b>First find your Roku's <a href="https://www.lifewire.com/how-to-find-roku-ip-address-4174687" target="_blank">IP address</a>:</b>
 <br>
-https://www.lifewire.com/how-to-find-roku-ip-address-4174687
 <br>
 * Remember its IP address as you'll need to
 enter it as shown in the image above.
