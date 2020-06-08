@@ -3,7 +3,7 @@ package main
 /*
 	- rootVIII 04FEB2020
 	- roku.go
-	- cross platform GUI Roku remote
+	- cross platform GUI Roku remote made with Fyne
 */
 
 import (
