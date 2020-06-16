@@ -119,11 +119,11 @@ func (r *remote) buildUI() {
 		r.postCommand("play")
 		r.setStatus("play")
 	})
-	backBtn := widget.NewButtonWithIcon("", theme.NavigateBackIcon(), func() {
+	backBtn := widget.NewButton("BACK", func() {
 		r.postCommand("back")
 		r.setStatus("back")
 	})
-	powerBtn := widget.NewButton("I|O", func() {
+	powerBtn := widget.NewButton("ON/OFF", func() {
 		r.postCommand("power")
 		r.setStatus("power")
 	})
