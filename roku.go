@@ -7,7 +7,9 @@ package main
 */
 
 import (
+	"bytes"
 	"fmt"
+	"image"
 	"io/ioutil"
 	"net"
 	"net/http"
@@ -71,12 +73,16 @@ func (r *remote) setStatus(state string) {
 }
 
 func (r *remote) buildUI() {
-	a := app.New()
-	icon, _ := fyne.LoadResourceFromPath("icon.png")
-	a.SetIcon(icon)
-	window := a.NewWindow("Roku")
+	rokuApp := app.New()
+
+	imgData, _, _ := image.Decode(bytes.NewReader(RokuLogoPNG))
+	img := canvas.NewImageFromImage(imgData)
+
+	rokuApp.SetIcon(fyne.NewStaticResource("icon.png", IconPNG))
+
+	window := rokuApp.NewWindow("Roku")
 	user, _ := user.Current()
-	img := canvas.NewImageFromFile("rokulogo.png")
+
 	r.statusLabel = widget.NewLabel("Hello " + user.Username)
 	ipLabel := widget.NewLabel("Roku Server IP:")
 	ipEntry := widget.NewEntry()
