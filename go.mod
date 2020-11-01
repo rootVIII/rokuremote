@@ -1,5 +1,5 @@
-module rokuremote
+module github.com/rootVIII/rokuremote
 
-go 1.13
+go 1.15
 
-require fyne.io/fyne v1.2.4
+require fyne.io/fyne v1.4.0
