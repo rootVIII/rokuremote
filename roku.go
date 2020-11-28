@@ -23,8 +23,8 @@ import (
 	"fyne.io/fyne/widget"
 )
 
-// RokuRemote is implemented by remote.
-type RokuRemote interface {
+// rokuRemote is implemented by remote.
+type rokuRemote interface {
 	postCommand(endpoint string)
 	setIP(ipAddress string)
 	buildUI()
@@ -32,7 +32,7 @@ type RokuRemote interface {
 }
 
 type remote struct {
-	RokuRemote
+	rokuRemote
 	IP          string
 	response    []byte
 	statusLabel *widget.Label
@@ -183,7 +183,7 @@ func (r *remote) buildUI() {
 }
 
 func main() {
-	var roku RokuRemote
+	var roku rokuRemote
 	roku = &remote{}
 	roku.buildUI()
 }
