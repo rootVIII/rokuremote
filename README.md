@@ -14,7 +14,7 @@ will turn on when the input receives power from the TV.
 However it may be useful for turning the Roku OFF.
 <br>
 <br>
-There is a signed/Apple-notarized macOS installer found in <a href="https://github.com/rootVIII/rokuremote/releases/tag/v1.0">Releases</a>.
+While this should run on any system, there is a signed/Apple-notarized macOS installer found in <a href="https://github.com/rootVIII/rokuremote/releases">Releases</a>.
 <br>
 <br>
 If unable to get or build on Windows, these steps may be needed:
