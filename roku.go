@@ -78,8 +78,6 @@ func (r *remote) buildUI() {
 	imgData, _, _ := image.Decode(bytes.NewReader(RokuLogoPNG))
 	img := canvas.NewImageFromImage(imgData)
 
-	rokuApp.SetIcon(fyne.NewStaticResource("icon.png", IconPNG))
-
 	window := rokuApp.NewWindow("Roku")
 	user, _ := user.Current()
 
