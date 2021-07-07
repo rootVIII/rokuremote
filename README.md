@@ -2,6 +2,8 @@
 <img src="https://user-images.githubusercontent.com/30498791/124700488-d55f2d80-deba-11eb-9016-502baed92eeb.png" alt="mp4">
 <br>
 <br>
+.mov <a href="https://github.com/rootVIII/rokuremote/issues/1"></a>
+<br>
 <br>
 Basic remote features offered:<br>
 up, down, left, right, ok, home, play/pause, back, and power
