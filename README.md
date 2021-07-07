@@ -16,6 +16,7 @@ A network scan is performed based on your machine's IPv4<br>
 address and netmask at application starup. Any found Roku<br>
 devices should load into the dropdown.
 <br>
+<br>
 The remote has only been tested on the typical /24 private<br>
 network and finds available devices in under a second. The<br>
 remote has not been tested on larger networks (less than<br>
@@ -23,8 +24,8 @@ remote has not been tested on larger networks (less than<br>
 <br>
 <br>
 <br>
-There is a signed/Apple-notarized macOS installer found<br>
-in <a href="https://github.com/rootVIII/rokuremote/releases/tag/V1.0">Releases</a> (built on Intel Big Sur).
+There is a signed/Apple-notarized macOS installer found in<br>
+<a href="https://github.com/rootVIII/rokuremote/releases/tag/V1.0">Releases</a> (built on Intel Big Sur).
 <br>
 <br>
 Otherwise use <code>npm</code> to run:
@@ -32,6 +33,7 @@ Otherwise use <code>npm</code> to run:
   <code>
 # Navigate to project root and run npm start (requires electron):
 npm start .
+
 # Build electron dist/ with executable (requires electron-builder)
 npm run pack
   </code>
