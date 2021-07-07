@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <title>Roku Remote</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel=stylesheet type=text/css href="./bootstrap.css">
+    <link rel="icon" href="./favicon.ico">
+    <script src="./keypress.js" type="text/javascript" defer> </script>
+    <script src="./load_devices.js" type="text/javascript" defer> </script>
+    <style>
+        #deviceSelect {
+            color:#800080;
+            width: 170px;
+            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+            background: #000000;
+            border:1px solid #800080;
+            border-radius: 5px;
+        }
+        #statusMessage {
+            font-size: 10px;
+        }
+        body {
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        select {
+            font-size: 10px;
+        }
+      </style>
+</head>
+<body class="bg-dark">
+    <br>
+    <div class="container-sm bg-dark rounded text-center">
+        <form class="form" id="mainForm">
+            <div class="img-fluid">
+                <img src="./title.png" class="rounded" width="130" height="40">
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-1">
+                    &emsp;
+                </div>
+                <div class="col-10">
+                    <button type="button" id='up' class="btn btn-dark btn-sm text-light btn-outline-primary" onclick="pressedKey(this.id)">&uarr;</button>
+                </div>
+                <div class="col-1">
+                    &emsp;
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    &emsp;
+                </div>
+                <div class="col-10 mt-1 mb-1">
+                    <button type="button" id='left' class="btn btn-dark btn-sm text-light btn-outline-primary" onclick="pressedKey(this.id)">&larr;</button>
+                    <button type="button" id='select' class="btn btn-dark btn-sm text-light btn-outline-primary" onclick="pressedKey(this.id)"><small>ok</small></button>
+                    <button type="button" id='right' class="btn btn-dark btn-sm text-light btn-outline-primary" onclick="pressedKey(this.id)">&rarr;</button>
+                </div>
+                <div class="col-1">
+                    &emsp;
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    &emsp;
+                </div>
+                <div class="col-10 mb-5">
+                    <button type="button" id='down' class="btn btn-dark btn-sm text-light btn-outline-primary" onclick="pressedKey(this.id)">&darr;</button>
+                </div>
+                <div class="col-1">
+                    &emsp;
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-1">
+                    &emsp;
+                </div>
+                <div class="col">
+                    <button type="button" id='home' class="btn btn-dark btn-sm text-light btn-outline-primary" onclick="pressedKey(this.id)">&thinsp;&nbsp;&#8962;&nbsp;&thinsp;</button>
+                    <button type="button" id='play' class="btn btn-dark btn-sm text-light btn-outline-primary" onclick="pressedKey(this.id)">&#9658;&par;</button>
+                    <button type="button" id='back' class="btn btn-dark btn-sm text-light btn-outline-primary" onclick="pressedKey(this.id)">&nbsp;&crarr;&nbsp;</button>
+                    <button type="button" id='power' class="btn btn-dark btn-sm text-light btn-outline-primary" onclick="pressedKey(this.id)">&nbsp;&#9212;&nbsp;</button>
+                </div>
+                <div class="col-1">
+                    &emsp;
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    &emsp;
+                </div>
+                <div class="col-8" id="dropDownDiv">
+                    
+                </div>
+                <div class="col-2">
+                    &emsp;
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-1">
+                    &emsp;
+                </div>
+                <div class="col-10">
+                    <p class="text-light"><small id="statusMessage">&emsp;</small></p>
+                </div>
+                <div class="col-1">
+                    &emsp;
+                </div>
+            </div>
+            <br>
+        </form>
+        <br>
+    </div>
+</body>
