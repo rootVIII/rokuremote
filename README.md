@@ -13,14 +13,13 @@ TV. However it may be useful for turning the Roku OFF.
 <br>
 <br>
 A network scan is performed based on your machine's IPv4<br>
-address and netmask. Any found Roku devices should load<br>
-into the dropdown.
-<br>
+address and netmask at application starup. Any found Roku<br>
+devices should load into the dropdown.
 <br>
 The remote has only been tested on the typical /24 private<br>
 network and finds available devices in under a second. The<br>
 remote has not been tested on larger networks (less than<br>
-/24 with more hosts) but it should work the same in theory.
+/24 and with more hosts). It should work the same in theory.
 <br>
 <br>
 <br>
