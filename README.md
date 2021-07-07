@@ -33,7 +33,6 @@ Otherwise use <code>npm</code> to run:
   <code>
 # Navigate to project root and run npm start (requires electron):
 npm start .
-
 # Build electron dist/ with executable (requires electron-builder)
 npm run pack
   </code>
