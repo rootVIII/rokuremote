@@ -12,6 +12,10 @@ Rokus will turn on when the input receives power from the<br>
 TV. However it may be useful for turning the Roku OFF.
 <br>
 <br>
+This code should run on any OS, but has only been tested on<br>
+MacOS Big Sur.
+<br>
+<br>
 A network scan is performed based on your machine's IPv4<br>
 address and netmask at application starup. Any found Roku<br>
 devices should load into the dropdown.
