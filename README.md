@@ -24,8 +24,8 @@ remote has not been tested on larger networks (less than<br>
 <br>
 <br>
 <br>
-There is a signed/Apple-notarized<br> macOS installer found<br>
-in <a href="">Releases</a> (built on Intel Big Sur).
+There is a signed/Apple-notarized macOS installer found<br>
+in <a href="https://github.com/rootVIII/rokuremote/releases/tag/V1.0">Releases</a> (built on Intel Big Sur).
 <br>
 <br>
 Otherwise use <code>npm</code> to run:
