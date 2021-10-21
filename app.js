@@ -16,16 +16,16 @@ function createWindow() {
         },
     });
 
-    mainWindow.loadURL('http://localhost:8000');
+    mainWindow.loadURL('http://localhost:8000').catch(() => {
+        mainWindow = null;
+    });
     mainWindow.on('closed', () => {
         mainWindow = null;
     });
 }
 
-app.on('ready', createWindow);
-
-app.on('resize', (e, x, y) => {
-    mainWindow.setSize(x, y);
+app.whenReady().then(() => {
+    createWindow();
 });
 
 app.on('window-all-closed', () => {
@@ -33,7 +33,7 @@ app.on('window-all-closed', () => {
 });
 
 app.on('activate', () => {
-    if (mainWindow === null) {
+    if (BrowserWindow.getAllWindows().length === 0) {
         createWindow();
     }
 });
