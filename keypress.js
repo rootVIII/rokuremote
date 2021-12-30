@@ -1,7 +1,5 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable-next-line no-unused-vars */
 async function pressedKey(keyID) {
-    /* eslint-enable no-unused-vars */
-
     const ip = document.getElementById('deviceSelect').value;
     const statusMessageElement = document.getElementById('statusMessage');
 
