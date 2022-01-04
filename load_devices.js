@@ -5,34 +5,32 @@ class LoadingAnimation {
         this.status = document.getElementById('statusMessage');
         this.status.innerHTML = 'Searching for Roku devices...';
         this.opacity = 0.0;
-        this.direction = 'in';
-        this.status.style.opacity = this.opacity;
+        this.outZ = false;
+        this.status.style.opacity = String(this.opacity);
     }
 
     updateText() {
         if (this.clock % 3 === 0) {
-            if (this.direction === 'in') {
-                if (this.opacity < 1.0) {
-                    this.opacity += 0.05;
-                } else {
-                    this.direction = 'out';
-                }
-            } else if (this.direction === 'out') {
-                if (this.opacity > 0.0) {
-                    this.opacity -= 0.05;
-                } else {
-                    this.direction = 'in';
-                }
+            if (this.outZ) {
+                this.opacity += 0.05;
+            } else {
+                this.opacity -= 0.05;
             }
+            this.status.style.opacity = String(this.opacity);
 
-            this.status.style.opacity = this.opacity;
+            if (this.opacity < 0) {
+                this.outZ = true;
+            }
+            if (this.opacity > 1) {
+                this.outZ = false;
+            }
         }
     }
 
     stop() {
         window.cancelAnimationFrame(this.requestID);
         this.status.innerHTML = '&emsp;';
-        this.status.style.opacity = 1.0;
+        this.status.style.opacity = '1.0';
     }
 
     start() {
