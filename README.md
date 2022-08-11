@@ -1,48 +1,32 @@
-###### Roku Remote
-<img src="https://user-images.githubusercontent.com/30498791/124700488-d55f2d80-deba-11eb-9016-502baed92eeb.png" alt="mp4">
-<br>
-<br>
-Demo <a href="https://github.com/rootVIII/rokuremote/issues/1">.mov</a>
+###### Roku Remote for Ubuntu
+<img src="https://user-images ... ... TODO" alt="Roku Remote Image">
 <br>
 <br>
 Basic remote features offered:<br>
-up, down, left, right, ok, home, play/pause, back, and power
+up, down, left, right, ok, home, play/pause, and back
 <br>
 <br>
-You shouldn't really need to use the power button as most
-Rokus will turn on when the input receives power from the
-TV. However it may be useful for turning the Roku OFF.
+This project should work on any platform, however the GUI will most
+likely need adjustments if not using Ubuntu.
 <br>
 <br>
-This code should run on any OS, but has only been tested on
-MacOS Big Sur.
+Use the GUI's Edit button to store your Roku IP. Press Save after
+entering the IP address.
+<br><br>
+Use your Roku's Network Settings panel to find the device's private IP address.
+For most class C networks it will probably look similar to 192.168.1.XXX.
 <br>
 <br>
-A network scan is performed based on your machine's IPv4
-address and netmask at application start-up. Any found Roku
-devices should load into the dropdown.
+<pre><code># Requirements if on Linux OS:
+sudo apt-get install python3-tk</code></pre>
 <br>
 <br>
-The remote has only been tested on the typical /24 private
-network and finds available devices in under a second. The
-remote has not been tested on larger networks (less than
-/24 and with more hosts). It should work the same in theory.
+Other than Tkinter, there are no other requirements except for Python3.
 <br>
 <br>
+<pre><code># To run the project:
+python3 roku_remote.py</code></pre>
 <br>
-There is a signed/Apple-notarized macOS installer found in
-<a href="https://github.com/rootVIII/rokuremote/releases/tag/V1.0">Releases</a> (built on Intel Big Sur).
-<br>
-<br>
-Otherwise use <code>npm</code> to run:
-<pre>
-  <code>
-# Navigate to project root and run npm start (requires electron):
-npm start .
-# Build electron dist/ with executable (requires electron-builder)
-npm run pack
-  </code>
-</pre>
 <br>
 <hr>
-<b>Author: rootVIII 2020</b><br>
+<b>Author: rootVIII 2019-2022</b><br>
