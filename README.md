@@ -17,15 +17,13 @@ Use your Roku's Network Settings panel to find the device's private IP address.
 For most class C networks it will probably look similar to 192.168.1.XXX.
 <br>
 <br>
-<pre><code># Requirements if on Linux OS:
-sudo apt-get install python3-tk</code></pre>
 <br>
 <br>
 Other than Tkinter, there are no other requirements except for Python3.
 <br>
 <br>
 <pre><code># To run the project:
-python3 roku_remote.py</code></pre>
+python roku_remote.py</code></pre>
 <br>
 <br>
 <hr>
