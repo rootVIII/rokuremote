@@ -31,6 +31,8 @@ class Roku:
         self.roku_label.image = self.roku_img
         self.roku_label.grid(row=0, column=0, sticky=E+W, pady=3)
 
+        self.master.iconbitmap(f'{project_path}assets/icon.ico')
+
         btn_style = Style()
         btn_style.theme_use('alt')
         btn_style.map(
