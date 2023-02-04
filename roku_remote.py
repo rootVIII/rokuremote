@@ -5,10 +5,9 @@ from tkinter import Tk
 
 
 if __name__ == '__main__':
-    rpath = realpath(__file__)[:-len(basename(__file__))]
     try:
         root = Tk()
-        Roku(root, rpath)
+        Roku(root, realpath(__file__)[:-len(basename(__file__))])
         root.mainloop()
     except KeyboardInterrupt:
         print('ctrl-c pressed')
