@@ -1,7 +1,8 @@
 from getpass import getuser
 from html import unescape
 from json import dumps
-from tkinter import Entry, Label, Button, PhotoImage, E, W, END
+from tkinter import Entry, Label, PhotoImage, E, W, END
+from tkinter.ttk import Button, Style
 from urllib.request import Request, urlopen
 
 
@@ -12,14 +13,14 @@ class Roku:
         gray = '#202020'
         black = '#000000'
         cyan = '#80DFFF'
-        text_style = 'Helvetica 8 bold'
+        text_style = 'Arial 10'
 
         self.master = master
         self.master.title('ROKU REMOTE')
         self.master.configure(bg=dark)
-        self.master.maxsize('247', '480')
-        self.master.minsize('247', '480')
-        self.master.geometry('247x480')
+        self.master.maxsize('283', '480')
+        self.master.minsize('283', '480')
+        self.master.geometry('283x480')
 
         self.master.grid_columnconfigure(3, weight=1, uniform='column')
         self.master.grid_columnconfigure(6, weight=1, uniform='column')
@@ -30,79 +31,67 @@ class Roku:
         self.roku_label.image = self.roku_img
         self.roku_label.grid(row=0, column=0, sticky=E+W, pady=3)
 
+        btn_style = Style()
+        btn_style.theme_use('alt')
+        btn_style.map(
+            'Mod.TButton',
+            background=[('active', dark), ('!active', black)],
+            foreground=[('active', cyan), ('!active', magenta)],
+            focuscolor=cyan
+        )
+
         self.spacer1 = Label(master, bg=dark)
         self.spacer1.grid(row=1, pady=10)
 
-        self.up_button = Button(master, fg=magenta, bg=black,
-                                font=text_style, highlightbackground=gray,
-                                activebackground=dark, activeforeground=cyan,
-                                text=unescape('&#8593;'), width=6, command=self.up)
+        self.up_button = Button(master, style='Mod.TButton', width=10,
+                                text=unescape('&#8593;'), command=self.up)
         self.up_button.grid(row=2, column=0, pady=3)
 
-        self.left_button = Button(master, fg=magenta, bg=black,
-                                  font=text_style, highlightbackground=gray,
-                                  activebackground=dark, activeforeground=cyan,
-                                  text=unescape('&#8592;'), width=6, command=self.left)
+        self.left_button = Button(master, style='Mod.TButton', width=10,
+                                  text=unescape('&#8592;'), command=self.left)
         self.left_button.grid(row=3, sticky=W, padx=10, pady=3)
 
-        self.ok_button = Button(master, fg=magenta, bg=black,
-                                font=text_style, highlightbackground=gray,
-                                activebackground=dark, activeforeground=cyan,
-                                text=unescape('🆗'), width=6, command=self.select)
+        self.ok_button = Button(master, style='Mod.TButton', width=10,
+                                text=unescape('OK'), command=self.select)
         self.ok_button.grid(row=3, pady=3)
 
-        self.right_button = Button(master, fg=magenta, bg=black,
-                                   font=text_style, highlightbackground=gray,
-                                   activebackground=dark, activeforeground=cyan,
-                                   text=unescape('&#8594;'), width=6, command=self.right)
+        self.right_button = Button(master, style='Mod.TButton', width=10,
+                                   text=unescape('&#8594;'), command=self.right)
         self.right_button.grid(row=3, sticky=E, padx=10, pady=3)
 
-        self.down_button = Button(master, fg=magenta, bg=black,
-                                  font=text_style,  highlightbackground=gray,
-                                  activebackground=dark, activeforeground=cyan,
-                                  text=unescape('&#8595;'), width=6, command=self.down)
+        self.down_button = Button(master, style='Mod.TButton', width=10,
+                                  text=unescape('&#8595;'), command=self.down)
         self.down_button.grid(row=4, column=0, padx=3, pady=3)
 
         self.spacer2 = Label(master, bg=dark)
         self.spacer2.grid(row=5, pady=10)
 
-        self.back_button = Button(master, fg=magenta, bg=black,
-                                  font=text_style, highlightbackground=gray,
-                                  activebackground=dark, activeforeground=cyan,
-                                  text=unescape('↩'), width=6, command=self.back)
+        self.back_button = Button(master, style='Mod.TButton', width=10,
+                                  text=unescape('↩'), command=self.back)
         self.back_button.grid(row=6, padx=10, pady=3, sticky=W)
 
-        self.home_button = Button(master, fg=magenta, bg=black,
-                                  font=text_style, highlightbackground=gray,
-                                  activebackground=dark, activeforeground=cyan,
-                                  text=unescape('&#8962;'), width=6, command=self.home)
+        self.home_button = Button(master, style='Mod.TButton', width=10,
+                                  text=unescape('&#8962;'), command=self.home)
         self.home_button.grid(row=6, pady=3)
 
-        self.play_pause_button = Button(master, fg=magenta, bg=black,
-                                        font=text_style, highlightbackground=gray,
-                                        activebackground=dark, activeforeground=cyan,
-                                        text=unescape('&#9658; &#305;&#305;'),
-                                        width=6, command=self.play_pause)
+        self.play_pause_button = Button(master, style='Mod.TButton', width=10,
+                                        text=unescape('⏯️'),
+                                        command=self.play_pause)
         self.play_pause_button.grid(row=6, padx=10, pady=3, sticky=E)
 
         self.spacer3 = Label(master, bg=dark)
         self.spacer3.grid(row=8, pady=10)
 
         self.ip_input_label = Label(master, fg=magenta, bg=dark, font=text_style,
-                                    anchor=W,
-                                    width=16, padx=10, text='Roku IP:')
+                                    anchor=W, width=16, padx=10, text='Roku IP:')
         self.ip_input_label.grid(row=9, sticky=W)
 
-        self.edit_ip_button = Button(master, fg=magenta, bg=black, font=text_style,
-                                     activebackground=gray, activeforeground=cyan,
-                                     highlightthickness=0, bd=0, text='Edit',
-                                     height=1, width=8, command=self.edit_ip)
+        self.edit_ip_button = Button(master,  style='Mod.TButton', width=13,
+                                     text='Edit',  command=self.edit_ip)
         self.edit_ip_button.grid(row=9, pady=3)
 
-        self.save_ip_button = Button(master, fg=magenta, bg=black, font=text_style,
-                                     activebackground=gray, activeforeground=cyan,
-                                     highlightthickness=0, bd=0, text='Save',
-                                     height=1, width=8, command=self.store_ip)
+        self.save_ip_button = Button(master, style='Mod.TButton', width=13,
+                                     text='Save', command=self.store_ip)
         self.save_ip_button.grid(row=9, padx=10, pady=3, sticky=E)
 
         self.ip_input = Entry(master, fg=cyan, bg=dark, width=37,
